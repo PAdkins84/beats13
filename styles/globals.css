@@ -1,16 +1,435 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.imgSize {
+  width: 18rem;
+  height: 18rem;
+  transition: 0.2s;
+}
+
+.imgSize:hover {
+  transform: scale(1.03);
+}
+
+.boxCard {
+  margin: 5vh 0 1vh 2vw;
+}
+
+.ulStyle {
+  list-style: none;
+  display: inline-block;
+}
+
+.cardStyle {
+  border: 1px solid rgba(128, 128, 128, 0.452);
+  border-radius: 7px;
+}
+
+.margLeft {
+  margin-left: 10px;
+}
+
+.navright {
+  list-style: none;
+  text-transform: uppercase;
+  background-color: grey;
+}
+
+.logoMobile {
+  display: none;
+}
+
+.socialIcons {
+  color: #8056af !important;
+}
+
+.navCust {
+  position: relative;
+  bottom: 170px !important;
+}
+
+.mobileSocial {
+  display: none;
+}
+
+.jumbotron {
+  margin-top: 50px !important;
+  background-image: url("../components/img/slice1.jpg");
+  background-size: 100% 100%;
+  margin-bottom: 0 !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  height: 220px;
+  z-index: 1;
+}
+
+.logoStyle {
+  display: inline;
+  min-width: 160px;
+  max-width: 160px;
+  position: relative;
+  top: 50px;
+  z-index: 1000;
+  /* background-image: url("../img/beats13logo.png"); */
 }
 
 a {
-  color: inherit;
+  text-decoration: none;
+  color: rgb(0, 0, 0) !important;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+a:hover {
+  color: rgb(160, 160, 160) !important;
+  text-decoration: none !important;
+}
+
+/* li {
+    flex-basis: 5%;
+} */
+
+.headerclass {
+  display: inline;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  /* background-color: #111111 !important; */
+  color: rgb(63, 63, 63);
+}
+
+.logoStyle {
+  width: 160px;
+  position: relative;
+  top: -120px;
+}
+
+.iconr {
+  margin-left: 20px;
+}
+
+body {
+  background-color: white !important;
+}
+
+.container {
+  color: rgb(122, 122, 122);
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  /* border-bottom: 0.3px solid rgba(73, 73, 73, 0.795);
+  border-top: 0.3px solid rgba(73, 73, 73, 0.795); */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgb(241, 241, 241);
+}
+
+.contentStyle {
+  min-height: 95vh;
+}
+
+/* .footer {
+    background-color: #343a40;
+} */
+
+.btn {
+  color: #8056af !important;
+}
+
+nav {
+  transition: 0.5s;
+}
+
+.nav-link > a {
+  color: #8056af !important;
+}
+
+.nav-item > a {
+  position: relative;
+  color: #8056af !important;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.nav-item > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8056af;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-item > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.card:hover {
+  opacity: 0.8;
+}
+
+.form-control:focus {
+  border-color: #8056af;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(128, 86, 175, 1);
+}
+
+.contactStyle {
+  background-color: rgb(22, 22, 22);
+  border-radius: 0;
+  padding: 20px;
+}
+
+.fa-map-marker-alt,
+.fa-phone,
+.fa-envelope {
+  color: #8056af;
+}
+
+.card {
+  background-color: rgb(22, 22, 22);
+  color: white;
+  border: none;
+}
+
+.aboutPara {
+  color: black;
+  margin-bottom: 70px;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  text-decoration: line-through;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-toggler-icon {
+    position: relative;
+    bottom: 200px;
+    color: black !important;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .logoStyle {
+    display: none;
+  }
+  .logoMobile {
+    position: relative;
+    bottom: 50px;
+    width: 200px;
+    display: inline-flex;
+  }
+  .navbar-right {
+    display: none !important;
+  }
+  .mobileSocial {
+    display: flex;
+    list-style: none;
+    float: right;
+    position: relative;
+    bottom: 100px;
+  }
+  .navbar {
+    top: -120px;
+  }
+  .nav-item > a:before {
+    width: 100%;
+    height: 2px;
+    bottom: 2px;
+  }
+  .navbar-nav {
+    position: relative;
+    top: -103px;
+    left: 8px;
+  }
+  .nav-link {
+    background-color: #000000d2;
+    width: 75px;
+  }
+  .customBurger {
+    background-color: #8056af !important;
+    border: 1px solid black !important;
+  }
+  .dropLink {
+    color: white !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-toggler-icon {
+    position: relative;
+    top: 0px;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-right {
+    display: none;
+  }
+  .navbar-nav {
+    position: relative;
+    top: 12px;
+    left: 5px;
+  }
+  .mobileSocial {
+    display: flex;
+    list-style: none;
+    float: right;
+    position: relative;
+    bottom: 100px;
+  }
+  .nav-item > a:before {
+    width: 25%;
+    height: 2px;
+    bottom: 2px;
+  }
+  .logoMobile {
+    display: none;
+  }
+  .customBurger {
+    background-color: #8056af !important;
+    border: 1px solid black !important;
+  }
+  .dropLink {
+    color: white !important;
+  }
+  .jumbotron {
+    background-image: url("../components/img/slice.jpg");
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar-toggler-icon {
+    position: relative;
+    top: 35px;
+    color: black !important;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-right {
+    display: none;
+  }
+  .navbar-nav {
+    position: relative;
+    top: 30px;
+    left: -80px;
+  }
+  .mobileSocial {
+    display: flex;
+    list-style: none;
+    float: right;
+    position: relative;
+    bottom: 65px;
+  }
+  .nav-item > a:before {
+    width: 29%;
+    height: 2px;
+    bottom: 3px;
+  }
+  .logoMobile {
+    display: none;
+  }
+  .customBurger {
+    background-color: #8056af !important;
+    border: 1px solid black !important;
+  }
+  .dropLink {
+    color: white !important;
+  }
+}
+
+@media only screen and (min-width: 299px) and (max-width: 575px) {
+  .navbar-toggler-icon {
+    position: relative;
+    top: 35px;
+    color: black !important;
+  }
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-right {
+    display: none;
+  }
+  .navbar-nav {
+    position: relative;
+    top: 28px;
+    left: 7px;
+  }
+  .mobileSocial {
+    display: flex;
+    list-style: none;
+    float: right;
+    position: relative;
+    bottom: 65px;
+  }
+  .nav-item > a:before {
+    width: 29%;
+    height: 2px;
+    bottom: 3px;
+  }
+  .logoMobile {
+    display: none;
+  }
+  .customBurger {
+    background-color: #8056af !important;
+    border: 1px solid black !important;
+  }
+  .dropLink {
+    color: white !important;
+  }
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Wrapper {
+  background: black;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  align-items: center;
+}
+
+.Input-wrapper button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.Input-wrapper input {
+  border-radius: 4%;
+  border: 0;
+  background-color: white;
+  width: 160px;
+  padding: 6px;
+  height: 20px;
 }

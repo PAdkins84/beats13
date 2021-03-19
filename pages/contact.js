@@ -70,7 +70,7 @@ const ContactPage = () => {
                 </div>
             </div>
             <div className="text-center text-md-left">
-                <button className="btn btn-outline-light" type="submit">Send</button>
+                <button className="btn btn-outline-dark" type="submit">Send</button>
             </div>
         </form>
     </div>

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import Link from 'next/link';
 import { removeItemFromCart } from '../../../function';
 import { AppContext } from '../../context/AppContext';
 import CartItem from './CartItem';
@@ -58,6 +59,12 @@ const CartItemsContainer = () => {
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <Link href="/checkout">
+                                <button class="btn btn-secondary woo-next-large-black-btn mb-5">
+                                        <span className="woo-next-cart-checkout-text">Proceed to Checkout</span>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -26,14 +26,14 @@ const ContactPage = () => {
 
                 <div className="col-md-6">
                     <div className="md-form mb-0">
-                        <input type="text" id="name" name="name" class="form-control"/>
-                        <label htmlFor="name" class="">Your name</label>
+                        <input type="text" id="name" name="name" className="form-control"/>
+                        <label htmlFor="name" className="">Your name</label>
                     </div>
                 </div>
 
                 <div className="col-md-6">
                     <div className="md-form mb-0">
-                        <input type="text" id="email" name="email" class="form-control"/>
+                        <input type="text" id="email" name="email" className="form-control"/>
                         <label htmlFor="email" className="">Your email</label>
                     </div>
                 </div>
@@ -69,7 +69,7 @@ const ContactPage = () => {
 
                 </div>
             </div>
-            <div class="text-center text-md-left">
+            <div className="text-center text-md-left">
                 <button className="btn btn-outline-light" type="submit">Send</button>
             </div>
         </form>

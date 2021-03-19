@@ -17,7 +17,7 @@ const Header = () => {
         </ul> */}
 
         <Navbar className="navbar navbar-expand-lg" expand="lg">
-        <a className="navbar-brand" href="https://beats13.store"><img className="logoStyle" alt="Branded Logo" src={logo} /></a>
+        <a className="navbar-brand" href="/"><img className="logoStyle" alt="Branded Logo" src={logo} /></a>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbar navbar-expand-lg navCust">

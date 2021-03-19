@@ -30,14 +30,27 @@ export const createNewProduct = (product, productPrice, qty) => {
     }
 };
 
-export const updateCart = (existingCart, product, qtyToBeAdded, newQty) => {
+export const updateCart = (existingCart, product, qtyToBeAdded, newQty = false) => {
     const updatedProducts = getUpdatedProducts(existingCart.products, product, qtyToBeAdded, newQty);
+    
     const addPrice = (total, item) => {
         total.totalPrice += item.totalPrice;
         total.qty += item.qty;
 
         return total;
     }
+    let total = updatedProducts.reduce(addPrice, {totalPrice: 0, qty: 0});
+
+    const updatedCart = {
+        products: updatedProducts,
+        totalProductsCount: parseInt(total.qty),
+        totalProductsPrice: parseFloat(total.totalPrice)
+    }
+    console.warn(updatedCart)
+    localStorage.setItem('woo-next-cart', JSON.stringify(updatedCart));
+
+    return updatedCart;
+
 };
 
 export const getUpdatedProducts = (existingProductsInCart, product, qtyToBeAdded, newQty = false) => {
@@ -48,7 +61,7 @@ export const getUpdatedProducts = (existingProductsInCart, product, qtyToBeAdded
         let updatedProduct = updatedProducts[productExistsIndex];
 
         updatedProduct.qty = (newQty) ? parseInt(newQty) : parseInt(updatedProduct.qty + qtyToBeAdded);
-        updatedProduct.totalPrice = parseFloat(updatedProduct.price * updatedProduct.qty).toFixed(2);
+        updatedProduct.totalPrice = parseFloat((updatedProduct.price * updatedProduct.qty).toFixed(2));
 
         return updatedProducts;
     } else {
@@ -70,3 +83,31 @@ export const isProductInCart = (existingProductsInCart, databaseId) => {
 
     return existingProductsInCart.indexOf(newArray[0]);
 };
+
+export const removeItemFromCart = (databaseId) => {
+    let existingCart = localStorage.getItem('woo-next-cart');
+    existingCart = JSON.parse(existingCart);
+
+    if(1 === existingCart.products.length) {
+        localStorage.removeItem('woo-next-cart');
+        return null;
+    }
+    const productExistsIndex = isProductInCart(existingCart.products, databaseId);
+
+    if(-1 < productExistsIndex) {
+        const productToBeRemoved = existingCart.products[productExistsIndex];
+        const qtyToBeRemoveFromTotal = productToBeRemove.qty;
+        const priceToBeDeductedFromTodal = productToBeRemoved.totalPrice;
+
+        let updatedCart = existingCart;
+        updatedCart.products.splice(productExistsIndex, 1);
+        updatedCart.totalProductsCount = updatedCart.totalProductsCount - qtyToBeRemoveFromTotal;
+        updatedCart.totalProductsPrice = totalProductsPrice - priceToBeDeductedFromTodal;
+
+        localStorage.setItem('woo-next-cart', JSON.stringify(updatedCart));
+
+        return updatedCart;
+    } else {
+        return existingCart;
+    }
+}

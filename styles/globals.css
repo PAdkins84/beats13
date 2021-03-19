@@ -19,7 +19,8 @@
 
 .cardStyle {
   border: 1px solid rgba(128, 128, 128, 0.452);
-  border-radius: 7px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .margLeft {
@@ -58,6 +59,8 @@
   border-top-right-radius: 10px !important;
   height: 220px;
   z-index: 1;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .logoStyle {
@@ -118,8 +121,6 @@ body {
   padding-right: 0 !important;
   /* border-bottom: 0.3px solid rgba(73, 73, 73, 0.795);
   border-top: 0.3px solid rgba(73, 73, 73, 0.795); */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   background-color: rgb(241, 241, 241);
 }
 
@@ -193,9 +194,14 @@ nav {
 }
 
 .card {
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(194, 194, 194) !important;
   color: white;
   border: none;
+  width: 340px;
+}
+
+.cardImg {
+  width: 100% !important;
 }
 
 .aboutPara {
@@ -390,9 +396,9 @@ button[disabled] {
   }
 }
 
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-header {
   min-height: 100vh;
@@ -432,4 +438,41 @@ button[disabled] {
   width: 160px;
   padding: 6px;
   height: 20px;
+}
+
+.woo-next-cart-total-container {
+  max-height: 200px;
+  height: 100%;
+}
+
+.woo-next-cart-wrap {
+  cursor: pointer;
+  padding-right: 16px;
+}
+
+.woo-next-cart-price {
+  color: #8056af
+}
+
+.woo-next-cart-icon-container {
+  position: relative;
+}
+
+.woo-next-cart-icon {
+  font-size: 20px;
+}
+
+.woo-next-cart-count {
+  top: -7px;
+  left: 12px;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 16px;
+  color: #8056af;
+  min-height: 16px;
+  font-weight: 700;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.774);
+  border: 1px solid black;
+  position: absolute;
 }

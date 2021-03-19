@@ -35,9 +35,11 @@ const Merch = ( props ) => {
   return (
       <Layout>
         <div className="container cardStyle">
+          <div className="row">
           { products.length ? (
               products.map( product => <Products key={product.id} product={ product } />)
           ) : ''}
+          </div>
         </div>
       </Layout>
   )

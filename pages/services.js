@@ -11,7 +11,7 @@ const Services = () => {
                 <div>
                     <h1 className="text-center mt-3">SERVICES</h1>
                 </div>
-                    <div class="card-group mt-5 mb-5">
+                    <div className="card-group mt-5 mb-5">
                         <div className="card mr-2">
                             <img className="card-img-top mx-auto d-block" style={tempStyle} src="" alt="Custom Beats"/>
                             <div className="card-body">

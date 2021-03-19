@@ -9,9 +9,9 @@ const CartIcon = () => {
 
     return (
         <React.Fragment>
-            <Link href="cart">
+            <Link href="/cart">
                 <a>
-                    <div class="woo-next-cart-wrap">
+                    <div className="woo-next-cart-wrap">
                         {totalPrice ? <span className="woo-next-cart-price">£{totalPrice.toFixed(2)}</span> : ''}
                         <span className="woo-next-cart-icon-container">
                             <i className="fa fa-shopping-cart woo-next-cart-icon" />

@@ -4,11 +4,11 @@ import AddToCartButton from '../components/cart/AddToCartButton';
 const Products = ( props ) => {
     const { product } = props;
     return (
-            <div className="row card mb-3">
+            <div className=" card m-3">
                 <h3 className="card-header">{product.name}</h3>
                 <Link as={`/product/${product.slug}-${product.databaseId}`} href={`/product?slug=${product.slug}-${product.databaseId}`}>
                     <a>
-                        <img style={{height: '200px', width: '300px', display: 'block'}}
+                        <img className="cardImg" style={{height: '200px', width: '300px', display: 'block'}}
                             src={product.image.sourceUrl}
                             alt="Product image"/>
                     </a>

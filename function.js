@@ -96,13 +96,13 @@ export const removeItemFromCart = (databaseId) => {
 
     if(-1 < productExistsIndex) {
         const productToBeRemoved = existingCart.products[productExistsIndex];
-        const qtyToBeRemoveFromTotal = productToBeRemove.qty;
-        const priceToBeDeductedFromTodal = productToBeRemoved.totalPrice;
+        const qtyToBeRemoveFromTotal = productToBeRemoved.qty;
+        const priceToBeDeductedFromTotal = productToBeRemoved.totalPrice;
 
         let updatedCart = existingCart;
         updatedCart.products.splice(productExistsIndex, 1);
         updatedCart.totalProductsCount = updatedCart.totalProductsCount - qtyToBeRemoveFromTotal;
-        updatedCart.totalProductsPrice = totalProductsPrice - priceToBeDeductedFromTodal;
+        updatedCart.totalProductsPrice = updatedCart.totalProductsPrice - priceToBeDeductedFromTotal;
 
         localStorage.setItem('woo-next-cart', JSON.stringify(updatedCart));
 

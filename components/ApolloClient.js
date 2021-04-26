@@ -7,7 +7,7 @@ import clientConfig from '../client-config';
 const client = new ApolloClient({
     link: createHttpLink({
         uri: clientConfig.graphqlUrl,
-        fetch: fetch
+        fetch: fetch,
     }),
     cache: new InMemoryCache()
 });
